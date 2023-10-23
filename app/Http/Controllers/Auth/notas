@@ -1,0 +1,30 @@
+    public function index()
+    {
+        //grafico cumplimiento global   
+        $tc = Respuesta::where('respuesta', 'C')->count();
+        $tnc = Respuesta::where('respuesta', 'NC')->count();
+
+        if ($tc or $tnc > 0) {
+            $totalcum = $tc / ($tc + $tnc) * 100;
+            $totalcum = number_format($totalcum);
+        } else {
+            $totalcum = 0; //Valor predeterminado        
+        }
+
+        if ($tc or $tnc > 0) {
+            $totalnocum = $tnc / ($tc + $tnc) * 100;
+            $totalnocum = number_format($totalnocum);
+        } else {
+            $totalnocum = 0; //Valor predeterminado        
+        }
+
+        //grafico cumplimiento cargos
+        $cargos = Respuesta::distinct()->get(['cargo']);
+        $servicios = Respuesta::distinct()->get(['servicio']);
+        $estrategias = Respuesta::distinct()->get(['estrategia']);
+           
+        foreach ($servicios as $serv) {
+            $resultado = $this->cumpliservicio($serv->servicio);
+            $resultados []=$resultado;                   
+                 
+        }
