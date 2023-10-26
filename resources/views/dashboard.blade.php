@@ -9,10 +9,10 @@
             <h3 class="text-center">Total de Datos Hasta la Fecha</h3>
             <div class="card-body">
                 <form action="{{ '/dashboard2' }}" target="_blank" method="GET">
-
-                    <input type="date" required name="fechaini" id="">
-
-                    <input type="date" required name="fechafin" id="">
+                    <label for="fechaini">Desde</label>
+                    <input type="date" required name="fechaini">
+                    <label for="fechafin">Hasta</label>
+                    <input type="date" required name="fechafin">
 
                     <button type="submit" class="btnblue2"><i class="bi bi-search"></i>Ver Reporte</button>
                 </form>
@@ -22,8 +22,8 @@
 </div>
 
 <br>
-<div class="container charts">  
-    <input type="color" id="colorC1" value="#148C3A" title="Color"> 
+<div class="container charts">
+    <input type="color" id="colorC1" value="#148C3A" title="Color">
     <input type="color" id="colorC2" value="#063F95" title="Color">
     <div id="donutcumplimiento"></div>
     <table class="table">
