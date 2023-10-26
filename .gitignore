@@ -5,7 +5,9 @@
 /storage/*.key
 /vendor
 .env
-.zip
+*zip
+*rar
+*7zip
 .env.backup
 .env.production
 .phpunit.result.cache

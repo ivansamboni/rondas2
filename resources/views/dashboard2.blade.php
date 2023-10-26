@@ -15,7 +15,6 @@
                 <option value="<?php echo $servicio['servicio'] ?>"><?php echo $servicio['servicio'] ?></option>
             <?php } ?>
         </select>
-
         <input type="date" hidden name="fechaini" value="{{$fechaini}}">
         <input type="date" hidden name="fechafin" value="{{$fechafin}}">
 
@@ -25,7 +24,7 @@
 <br>
 
 <div class="container charts">
-   
+
     <input type="color" id="colorC1" value="#148C3A">
     <input type="color" id="colorC2" value="#063F95">
 
